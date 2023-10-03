@@ -1,0 +1,63 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="description">Descrição do Produto</label>
+    <input
+      type="text"
+      name="description"
+      id="description"
+      [(ngModel)]="product.description"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="value">Valor do Produto</label>
+    <input
+      type="number"
+      name="value"
+      id="value"
+      [(ngModel)]="product.value"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="unitOfMeasurement">Unidade de Medida</label>
+    <select
+      name="unitOfMeasurement"
+      id="unitOfMeasurement"
+      [(ngModel)]="product.unitOfMeasurement"
+      required
+    >
+      <option value="UN">UN - Unidade</option>
+      <option value="KG">KG - Quilograma</option>
+      <option value="LT">LT - Litro</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="provider">Fornecedor</label>
+    <select
+      name="provider"
+      id="provider"
+      [(ngModel)]="product.provider"
+      required
+    >
+      <option value="Nike">Nike</option>
+      <option value="Adidas">Adidas</option>
+      <option value="Pulma">Pulma</option>
+      <option value="Darth Vader">Darth Vader</option>
+      <option value="Valve">Valve</option>
+      <option value="ChatGPT">ChatGPT</option>
+      <option value="New Balance">New Balance</option>
+    </select>
+  </div>
+  <div>
+    <label for="active">Situação</label>
+    <select name="active" id="active" [(ngModel)]="product.active" required>
+      <option value="true">Ativo</option>
+      <option value="false">Inativo</option>
+    </select>
+  </div>
+  <button type="submit">Cadastrar</button>
+</form>
