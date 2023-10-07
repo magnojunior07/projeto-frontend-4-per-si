@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-
-export interface IProduct {
-  description: string;
-  value: number;
-  unitOfMeasurement: string;
-  provider: string;
-  active: boolean;
-}
+import { IProduct } from 'src/app/models/product..model';
+import IProvider from 'src/app/models/provider.model';
+import { providers } from 'src/app/shared/prodivers.list';
+import { products } from 'src/app/shared/products.list';
 
 @Component({
   selector: 'app-product-form',
@@ -14,6 +10,8 @@ export interface IProduct {
   styleUrls: ['./product-form.component.css'],
 })
 export class ProductFormComponent {
+  providersList: IProvider[] = providers;
+
   product: IProduct = {
     description: '',
     value: 0,
@@ -23,6 +21,23 @@ export class ProductFormComponent {
   };
 
   onSubmit(): void {
-    console.log(this.product);
+    const productsListString = localStorage.getItem('productsList');
+    if (productsListString) {
+      this.product.id = products.length + 1;
+      products.push(this.product);
+      // localStorage.setItem('productsList', JSON.stringify(products));
+    } else {
+      products.push(this.product);
+      // localStorage.setItem('productsList', JSON.stringify(products));
+    }
+    this.product = {
+      id: products.length + 1,
+      description: '',
+      value: 0,
+      unitOfMeasurement: '',
+      provider: '',
+      active: false,
+    };
+    console.log(products);
   }
 }

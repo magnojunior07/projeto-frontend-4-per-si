@@ -43,20 +43,16 @@
       [(ngModel)]="product.provider"
       required
     >
-      <option value="Nike">Nike</option>
-      <option value="Adidas">Adidas</option>
-      <option value="Pulma">Pulma</option>
-      <option value="Darth Vader">Darth Vader</option>
-      <option value="Valve">Valve</option>
-      <option value="ChatGPT">ChatGPT</option>
-      <option value="New Balance">New Balance</option>
+      <option *ngFor="let provider of providersList" [value]="provider.name">
+        {{ provider.name }}
+      </option>
     </select>
   </div>
   <div>
     <label for="active">Situação</label>
     <select name="active" id="active" [(ngModel)]="product.active" required>
-      <option value="true">Ativo</option>
-      <option value="false">Inativo</option>
+      <option value="Ativo">Ativo</option>
+      <option value="Inativo">Inativo</option>
     </select>
   </div>
   <button type="submit">Cadastrar</button>

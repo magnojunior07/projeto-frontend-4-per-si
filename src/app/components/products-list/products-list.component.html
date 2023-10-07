@@ -1,0 +1,24 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Unidade de Medida</th>
+        <th>Fornecedor</th>
+        <th>Situação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productsList">
+        <td>{{ product.id }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.value }}</td>
+        <td>{{ product.unitOfMeasurement }}</td>
+        <td>{{ product.provider }}</td>
+        <td>{{ product.active }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
