@@ -1,59 +1,88 @@
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <label for="description">Descrição do Produto</label>
-    <input
-      type="text"
-      name="description"
-      id="description"
-      [(ngModel)]="product.description"
-      required
-    />
-  </div>
+<div
+  class="scale-12 overflow-hidden flex justify-center items-center w-full h-full relative inset-y-20"
+>
+  <form
+    (ngSubmit)="onSubmit()"
+    class="flex flex-col w-80 gap-3 border-2 border-black p-8 rounded-lg bg-slate-200 top-7"
+  >
+    <h2 class="text-xl font-bold mb-4">Cadastrar Produto</h2>
+    <div class="flex flex-col gap-2">
+      <label for="description" class="text-gray-700"
+        >Descrição do Produto</label
+      >
+      <input
+        type="text"
+        name="description"
+        id="description"
+        [(ngModel)]="product.description"
+        required
+        class="border border-gray-300 rounded-md p-2"
+      />
+    </div>
 
-  <div>
-    <label for="value">Valor do Produto</label>
-    <input
-      type="number"
-      name="value"
-      id="value"
-      [(ngModel)]="product.value"
-      required
-    />
-  </div>
+    <div class="flex flex-col gap-2">
+      <label for="value" class="text-gray-700">Valor do Produto</label>
+      <input
+        type="number"
+        name="value"
+        id="value"
+        [(ngModel)]="product.value"
+        required
+        class="border border-gray-300 rounded-md p-2"
+      />
+    </div>
 
-  <div>
-    <label for="unitOfMeasurement">Unidade de Medida</label>
-    <select
-      name="unitOfMeasurement"
-      id="unitOfMeasurement"
-      [(ngModel)]="product.unitOfMeasurement"
-      required
+    <div class="flex flex-col gap-2">
+      <label for="unitOfMeasurement" class="text-gray-700"
+        >Unidade de Medida</label
+      >
+      <select
+        name="unitOfMeasurement"
+        id="unitOfMeasurement"
+        [(ngModel)]="product.unitOfMeasurement"
+        required
+        class="border border-gray-300 rounded-md p-2"
+      >
+        <option value="UN">UN - Unidade</option>
+        <option value="KG">KG - Quilograma</option>
+        <option value="LT">LT - Litro</option>
+      </select>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="provider" class="text-gray-700">Fornecedor</label>
+      <select
+        name="provider"
+        id="provider"
+        [(ngModel)]="product.provider"
+        required
+        class="border border-gray-300 rounded-md p-2"
+      >
+        <option *ngFor="let provider of providersList" [value]="provider.name">
+          {{ provider.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="active" class="text-gray-700">Situação</label>
+      <select
+        name="active"
+        id="active"
+        [(ngModel)]="product.active"
+        required
+        class="border border-gray-300 rounded-md p-2"
+      >
+        <option value="Ativo">Ativo</option>
+        <option value="Inativo">Inativo</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-md"
     >
-      <option value="UN">UN - Unidade</option>
-      <option value="KG">KG - Quilograma</option>
-      <option value="LT">LT - Litro</option>
-    </select>
-  </div>
-
-  <div>
-    <label for="provider">Fornecedor</label>
-    <select
-      name="provider"
-      id="provider"
-      [(ngModel)]="product.provider"
-      required
-    >
-      <option *ngFor="let provider of providersList" [value]="provider.name">
-        {{ provider.name }}
-      </option>
-    </select>
-  </div>
-  <div>
-    <label for="active">Situação</label>
-    <select name="active" id="active" [(ngModel)]="product.active" required>
-      <option value="Ativo">Ativo</option>
-      <option value="Inativo">Inativo</option>
-    </select>
-  </div>
-  <button type="submit">Cadastrar</button>
-</form>
+      Cadastrar
+    </button>
+  </form>
+</div>
