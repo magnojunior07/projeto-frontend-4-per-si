@@ -1,24 +1,50 @@
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Descrição</th>
-        <th>Preço</th>
-        <th>Unidade de Medida</th>
-        <th>Fornecedor</th>
-        <th>Situação</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of productsList">
-        <td>{{ product.id }}</td>
-        <td>{{ product.description }}</td>
-        <td>{{ product.value }}</td>
-        <td>{{ product.unitOfMeasurement }}</td>
-        <td>{{ product.provider }}</td>
-        <td>{{ product.active }}</td>
-      </tr>
-    </tbody>
+
+<div class="relative overflow-x-auto inset-y-28">
+  <Thead class=" flex justify-center content-center font-extrabold text-lg">LISTA DE PRODUTOS</Thead>
+  <table class="inset-x-1/3 relative text-sm text-left text-black dark:text-black">
+      <thead class="text-xs text-black uppercase dark:text-black">
+          <tr class="divide-x-2 divide-dashed divide-black">
+              <th scope="col" class="px-6 py-3">
+                Id
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Descrição  
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Preço
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Unidade
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Fornecedor
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Situação
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let product of productsList" class=" dark:border-black divide-x-2 divide-dashed divide-black">
+              <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-black">
+                  {{ product.id }}
+              </th>
+              <td class="px-6 py-4 ">
+                {{ product.description }}
+              </td>
+              <td class="px-6 py-4 ">
+                {{ product.value }}
+              </td>
+              <td class="px-6 py-4 ">
+                {{ product.unitOfMeasurement }}
+              </td>
+              <td class="px-6 py-4">
+                {{ product.provider }}
+              </td>
+              <td class="px-6 py-4">
+                {{ product.active }}
+              </td>
+          </tr>
+      </tbody>
   </table>
 </div>
