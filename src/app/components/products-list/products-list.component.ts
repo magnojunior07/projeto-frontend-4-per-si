@@ -13,4 +13,10 @@ export class ProductsListComponent implements OnInit {
   ngOnInit() {
     this.productsList = products;
   }
+
+  clearProductsList(): void {
+    localStorage.removeItem('productsList');
+    this.productsList = [];
+    window.location.reload();
+  }
 }
