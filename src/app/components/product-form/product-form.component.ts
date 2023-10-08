@@ -21,15 +21,10 @@ export class ProductFormComponent {
   };
 
   onSubmit(): void {
-    const productsListString = localStorage.getItem('productsList');
-    if (productsListString) {
-      this.product.id = products.length + 1;
-      products.push(this.product);
-      // localStorage.setItem('productsList', JSON.stringify(products));
-    } else {
-      products.push(this.product);
-      // localStorage.setItem('productsList', JSON.stringify(products));
-    }
+    this.product.id = products.length + 1;
+    products.push(this.product);
+    localStorage.setItem('productsList', JSON.stringify(products));
+
     this.product = {
       id: products.length + 1,
       description: '',
@@ -38,6 +33,5 @@ export class ProductFormComponent {
       provider: '',
       active: false,
     };
-    console.log(products);
   }
 }
