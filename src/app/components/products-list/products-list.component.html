@@ -11,6 +11,7 @@
         <th scope="col" class="px-6 py-3">Descrição</th>
         <th scope="col" class="px-6 py-3">Preço</th>
         <th scope="col" class="px-6 py-3">Unidade</th>
+        <th scope="col" class="px-6 py-3">Quantidade em Estoque</th>
         <th scope="col" class="px-6 py-3">Fornecedor</th>
         <th scope="col" class="px-6 py-3">Situação</th>
       </tr>
@@ -32,6 +33,9 @@
         <td class="px-6 py-4">R$ {{ product.value }}</td>
         <td class="px-6 py-4">
           {{ product.unitOfMeasurement }}
+        </td>
+        <td class="px-6 py-4">
+          {{ product.stockQuantity }}
         </td>
         <td class="px-6 py-4">
           {{ product.provider }}
