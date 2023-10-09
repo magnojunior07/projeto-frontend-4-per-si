@@ -1,5 +1,5 @@
 <div
-  class="scale-12 overflow-hidden flex justify-center items-center w-full h-full relative inset-y-20"
+  class="scale-12 overflow-hidden flex justify-center items-center w-full h-full relative inset-y-12"
 >
   <form
     (ngSubmit)="onSubmit()"
@@ -48,6 +48,19 @@
         <option value="KG">KG - Quilograma</option>
         <option value="LT">LT - Litro</option>
       </select>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="value" class="text-gray-700">Quantidade em Estoque</label>
+      <input
+        type="number"
+        name="value"
+        id="value"
+        [(ngModel)]="product.stockQuantity"
+        required
+        min="0"
+        class="border border-gray-300 rounded-md p-2"
+      />
     </div>
 
     <div class="flex flex-col gap-2">

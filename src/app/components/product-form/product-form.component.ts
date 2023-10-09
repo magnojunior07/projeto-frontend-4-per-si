@@ -16,6 +16,7 @@ export class ProductFormComponent {
     description: '',
     value: 0,
     unitOfMeasurement: '',
+    stockQuantity: 0,
     provider: '',
     active: false,
   };
@@ -30,6 +31,7 @@ export class ProductFormComponent {
       description: '',
       value: 0,
       unitOfMeasurement: '',
+      stockQuantity: 0,
       provider: '',
       active: false,
     };

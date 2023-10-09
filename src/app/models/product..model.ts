@@ -5,6 +5,7 @@ export interface IProduct {
   description: string;
   value: number;
   unitOfMeasurement: string;
+  stockQuantity: number;
   provider: string;
   active: boolean;
 }
